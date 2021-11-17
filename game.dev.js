@@ -10,10 +10,11 @@
 // do one thing at a time and test each stage
 //
 var playerChoise = "";
-var computerChoise = ""; //Event listeners to each selection
+var computerChoise = "";
+/** Event listeners to each user selection.  **/
 
-var selectChoice = document.querySelectorAll(".selection");
-console.log(selectChoice);
+var selectChoice = document.querySelectorAll(".selection"); //console.log(selectChoice);
+
 selectChoice.forEach(function (choice) {
   choice.addEventListener("click", function () {
     playerChoise = choice.innerText;
@@ -21,3 +22,12 @@ selectChoice.forEach(function (choice) {
     alert("You chose " + playerChoise);
   });
 });
+
+getComputerChoice = function getComputerChoice() {
+  var randomNumber = Math.floor(Math.random() * selectChoice.length); //console.log(randomNumber)
+
+  console.log(selectChoice[randomNumber].innerText);
+  computerChoise = selectChoice[randomNumber].innerText;
+};
+
+getComputerChoice();

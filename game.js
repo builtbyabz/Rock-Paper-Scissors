@@ -15,9 +15,9 @@ let computerChoise ="";
 
 
 
-//Event listeners to each selection
+/** Event listeners to each user selection.  **/
  const selectChoice = document.querySelectorAll(".selection")
- console.log(selectChoice);
+ //console.log(selectChoice);
 
  selectChoice.forEach(choice => { 
    choice.addEventListener("click", () => {
@@ -27,3 +27,15 @@ let computerChoise ="";
      })
      
  });
+
+
+ getComputerChoice = () => {
+     const randomNumber = Math.floor(Math.random() * selectChoice.length)
+     //console.log(randomNumber)
+     console.log(selectChoice[randomNumber].innerText)
+     computerChoise = selectChoice[randomNumber].innerText;
+    
+
+ }
+
+ getComputerChoice()
