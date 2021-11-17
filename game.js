@@ -13,8 +13,6 @@ let playerChoise = "";
 let computerChoise = "";
 
 
-
-
 /** Event listeners to each user selection.  **/
 const selectChoice = document.querySelectorAll(".selection")
 //console.log(selectChoice);
@@ -22,28 +20,31 @@ const selectChoice = document.querySelectorAll(".selection")
 selectChoice.forEach(choice => {
     choice.addEventListener("click", () => {
         playerChoise = choice.innerText;
-        getComputerChoice()
+        //getComputerChoice()
         displaySelection()
+        displayCpuSelection()
         //console.log(playerChoise)
-        //console.log(computerChoise)
+        console.log(getComputerChoice())
 
         //alert ("You chose " + playerChoise)
     })
 
 });
 
-// This function generates a randome selection for the computer
+// This function generates a random selection for the computer
 const getComputerChoice = () => {
     const randomNumber = Math.floor(Math.random() * selectChoice.length)
     //console.log(randomNumber)
     //console.log(selectChoice[randomNumber].innerText)
-    return computerChoise = selectChoice[randomNumber].innerText;
-
+    computerChoise = selectChoice[randomNumber].innerText;
+    return computerChoise;
 }
 
 //console.log(getComputerChoice())
 //console.log(computerChoise)
 
+
+//The default fist will change depending on what the user selects
 const displaySelection = () => {
     if (playerChoise === "Paper") {
         document.querySelector("#player--hand").src="assets/images/paper.png"
@@ -51,9 +52,18 @@ const displaySelection = () => {
         document.querySelector("#player--hand").src=" assets/images/scissors.png" 
     } else if (playerChoise === "Rock") {
         document.querySelector("#player--hand").src="assets/images/rock.png" 
-    }
-   
+    }  
 }
 
 
-displaySelection()
+const displayCpuSelection = () => {
+    if (computerChoise === "Paper") {
+        document.querySelector("#cpu--hand").src="assets/images/paper.png"
+    } else if (computerChoise === "Scissors") {
+        document.querySelector("#cpu--hand").src=" assets/images/scissors.png" 
+    } else if (computerChoise === "Rock") {
+        document.querySelector("#cpu--hand").src="assets/images/rock.png" 
+    }  
+}
+
+

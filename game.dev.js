@@ -17,21 +17,24 @@ var selectChoice = document.querySelectorAll(".selection"); //console.log(select
 
 selectChoice.forEach(function (choice) {
   choice.addEventListener("click", function () {
-    playerChoise = choice.innerText;
-    getComputerChoice();
-    displaySelection(); //console.log(playerChoise)
-    //console.log(computerChoise)
-    //alert ("You chose " + playerChoise)
+    playerChoise = choice.innerText; //getComputerChoice()
+
+    displaySelection();
+    displayCpuSelection(); //console.log(playerChoise)
+
+    console.log(getComputerChoice()); //alert ("You chose " + playerChoise)
   });
-}); // This function generates a randome selection for the computer
+}); // This function generates a random selection for the computer
 
 var getComputerChoice = function getComputerChoice() {
   var randomNumber = Math.floor(Math.random() * selectChoice.length); //console.log(randomNumber)
   //console.log(selectChoice[randomNumber].innerText)
 
-  return computerChoise = selectChoice[randomNumber].innerText;
+  computerChoise = selectChoice[randomNumber].innerText;
+  return computerChoise;
 }; //console.log(getComputerChoice())
 //console.log(computerChoise)
+//The default fist will change depending on what the user selects
 
 
 var displaySelection = function displaySelection() {
@@ -44,4 +47,12 @@ var displaySelection = function displaySelection() {
   }
 };
 
-displaySelection();
+var displayCpuSelection = function displayCpuSelection() {
+  if (computerChoise === "Paper") {
+    document.querySelector("#cpu--hand").src = "assets/images/paper.png";
+  } else if (computerChoise === "Scissors") {
+    document.querySelector("#cpu--hand").src = " assets/images/scissors.png";
+  } else if (computerChoise === "Rock") {
+    document.querySelector("#cpu--hand").src = "assets/images/rock.png";
+  }
+};
