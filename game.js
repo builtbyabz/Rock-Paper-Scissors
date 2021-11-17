@@ -8,12 +8,22 @@
             
 // do one thing at a time and test each stage
 //
+
+let playerChoise = "";
+let computerChoise ="";
+
+
+
+
+//Event listeners to each selection
  const selectChoice = document.querySelectorAll(".selection")
  console.log(selectChoice);
 
  selectChoice.forEach(choice => { 
-     choice.addEventListener("click", () => {
-         alert("the button was clicked")
+   choice.addEventListener("click", () => {
+         playerChoise = choice.innerText;
+         console.log(playerChoise)
+         alert ("You chose " + playerChoise)
      })
      
  });

@@ -9,10 +9,15 @@
 //         - store the scores and calculate who wins
 // do one thing at a time and test each stage
 //
+var playerChoise = "";
+var computerChoise = ""; //Event listeners to each selection
+
 var selectChoice = document.querySelectorAll(".selection");
 console.log(selectChoice);
 selectChoice.forEach(function (choice) {
   choice.addEventListener("click", function () {
-    alert("the button was clicked");
+    playerChoise = choice.innerText;
+    console.log(playerChoise);
+    alert("You chose " + playerChoise);
   });
 });
