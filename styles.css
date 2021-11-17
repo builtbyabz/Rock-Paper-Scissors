@@ -32,22 +32,23 @@ body {
 .grid-container .janken-title {
   grid-column: 2/5;
   font-family: "Play", sans-serif;
-  color: #D00000;
+  color: #FF1B1C;
   font-size: 2rem;
 }
 .grid-container .player--name {
   grid-column: 2/5;
-  font-family: "Changa One", cursive;
+  font-family: "Play", sans-serif;
   font-size: 1.5rem;
   color: white;
   text-transform: uppercase;
 }
-.grid-container .player--hand {
+.grid-container .cpu--hand {
   margin-bottom: 10px;
   grid-column: 2/5;
   display: grid;
+  transform: rotate(180deg);
 }
-.grid-container .cpu--hand {
+.grid-container .player--hand {
   margin-top: 10px;
   grid-column: 2/5;
 }
@@ -57,7 +58,7 @@ body {
   font-size: 1.5rem;
   color: white;
   text-transform: uppercase;
-  font-family: "Changa One", cursive;
+  font-family: "Play", sans-serif;
 }
 .grid-container .select {
   display: flex;
@@ -122,14 +123,14 @@ body {
   }
   .grid-container .player--hand {
     grid-row: 4;
-    transform: rotate(90deg);
+    transform: rotate(270deg);
     grid-column: 4/5;
     margin: 0;
   }
   .grid-container .cpu--hand {
     grid-row: 4;
     grid-column: 2/3;
-    transform: scaleY(-1) rotate(270deg);
+    transform: rotate(90deg) scaleX(-1);
     margin: 0;
   }
   .grid-container .versus {

@@ -35,27 +35,30 @@ body {
     .janken-title {
         grid-column: 2 / 5;
         font-family: 'Play', sans-serif;
-        color: #D00000;
+        color: #FF1B1C;
         font-size: 2rem;
     }
 
     .player--name {
         grid-column: 2 / 5;
-        font-family: 'Changa One', cursive;
+        font-family: 'Play', sans-serif;
         font-size: 1.5rem;
         color: white;
         text-transform: uppercase;
     }
 
-    .player--hand {
+    .cpu--hand {
         margin-bottom: 10px;
         grid-column: 2 / 5;
         display: grid;
+         transform: rotate(180deg);
     }
 
-    .cpu--hand {
+    .player--hand {
         margin-top: 10px;
         grid-column: 2 / 5;
+     
+      
     }
 
     .cpu--name {
@@ -64,7 +67,7 @@ body {
         font-size: 1.5rem;
         color: white;
         text-transform: uppercase;
-        font-family: 'Changa One', cursive;
+        font-family: 'Play', sans-serif;
 
     }
 
@@ -152,7 +155,8 @@ body {
 
         .player--hand {
             grid-row: 4;
-            transform: rotate(90deg);
+            transform: rotate(270deg);
+            
             grid-column: 4 / 5;
             margin: 0;
         }
@@ -160,7 +164,7 @@ body {
         .cpu--hand {
             grid-row: 4;
             grid-column: 2 / 3;
-            transform: scaleY(-1) rotate(270deg);
+            transform: rotate(90deg) scaleX(-1);;
             margin: 0;
         }
 

@@ -39,20 +39,20 @@ var getComputerChoice = function getComputerChoice() {
 
 var displaySelection = function displaySelection() {
   if (playerChoise === "Paper") {
-    document.querySelector("#player--hand").src = "assets/images/paper.png";
+    document.querySelector("#cpu--hand").src = "assets/images/paper.png";
   } else if (playerChoise === "Scissors") {
-    document.querySelector("#player--hand").src = " assets/images/scissors.png";
+    document.querySelector("#cpu--hand").src = " assets/images/scissors.png";
   } else if (playerChoise === "Rock") {
-    document.querySelector("#player--hand").src = "assets/images/rock.png";
+    document.querySelector("#cpu--hand").src = "assets/images/rock.png";
   }
 };
 
 var displayCpuSelection = function displayCpuSelection() {
   if (computerChoise === "Paper") {
-    document.querySelector("#cpu--hand").src = "assets/images/paper.png";
+    document.querySelector("#player--hand").src = "assets/images/paper.png";
   } else if (computerChoise === "Scissors") {
-    document.querySelector("#cpu--hand").src = " assets/images/scissors.png";
+    document.querySelector("#player--hand").src = " assets/images/scissors.png";
   } else if (computerChoise === "Rock") {
-    document.querySelector("#cpu--hand").src = "assets/images/rock.png";
+    document.querySelector("#player--hand").src = "assets/images/rock.png";
   }
 };
