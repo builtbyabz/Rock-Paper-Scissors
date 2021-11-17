@@ -71,6 +71,12 @@ body {
   height: 50px;
   width: 50px;
 }
+.grid-container .select .selection .selection__name {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
 .grid-container .cpu-score {
   font-family: "Play", sans-serif;
   font-size: 3rem;
@@ -125,5 +131,13 @@ body {
     grid-column: 2/3;
     transform: scaleY(-1) rotate(270deg);
     margin: 0;
+  }
+  .grid-container .versus {
+    grid-column: 3/4;
+    grid-row: 4;
+    font-size: 6rem;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Changa One", cursive;
   }
 }
