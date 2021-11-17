@@ -18,16 +18,30 @@ var selectChoice = document.querySelectorAll(".selection"); //console.log(select
 selectChoice.forEach(function (choice) {
   choice.addEventListener("click", function () {
     playerChoise = choice.innerText;
-    console.log(playerChoise);
-    alert("You chose " + playerChoise);
+    getComputerChoice();
+    displaySelection(); //console.log(playerChoise)
+    //console.log(computerChoise)
+    //alert ("You chose " + playerChoise)
   });
-});
+}); // This function generates a randome selection for the computer
 
-getComputerChoice = function getComputerChoice() {
+var getComputerChoice = function getComputerChoice() {
   var randomNumber = Math.floor(Math.random() * selectChoice.length); //console.log(randomNumber)
+  //console.log(selectChoice[randomNumber].innerText)
 
-  console.log(selectChoice[randomNumber].innerText);
-  computerChoise = selectChoice[randomNumber].innerText;
+  return computerChoise = selectChoice[randomNumber].innerText;
+}; //console.log(getComputerChoice())
+//console.log(computerChoise)
+
+
+var displaySelection = function displaySelection() {
+  if (playerChoise === "Paper") {
+    document.querySelector("#player--hand").src = "assets/images/paper.png";
+  } else if (playerChoise === "Scissors") {
+    document.querySelector("#player--hand").src = " assets/images/scissors.png";
+  } else if (playerChoise === "Rock") {
+    document.querySelector("#player--hand").src = "assets/images/rock.png";
+  }
 };
 
-getComputerChoice();
+displaySelection();
