@@ -32,7 +32,7 @@ body {
 .grid-container .janken-title {
   grid-column: 2/5;
   font-family: "Play", sans-serif;
-  color: #FF1B1C;
+  color: #D10000;
   font-size: 2rem;
 }
 .grid-container .player--name {

@@ -8,9 +8,13 @@
 
 // do one thing at a time and test each stage
 //
-
 let playerChoise = "";
 let computerChoise = "";
+
+let playerScore = document.querySelector(".player-score");
+
+let computerScore = document.querySelector(".cpu-score");
+
 
 
 /** Event listeners to each user selection.  **/
@@ -20,11 +24,12 @@ const selectChoice = document.querySelectorAll(".selection")
 selectChoice.forEach(choice => {
     choice.addEventListener("click", () => {
         playerChoise = choice.innerText;
-        //getComputerChoice()
+        getComputerChoice()
         displaySelection()
         displayCpuSelection()
         //console.log(playerChoise)
-        console.log(getComputerChoice())
+        //console.log(getComputerChoice())
+        getScore()
 
         //alert ("You chose " + playerChoise)
     })
@@ -44,26 +49,51 @@ const getComputerChoice = () => {
 //console.log(computerChoise)
 
 
-//The default fist will change depending on what the user selects
+
 const displaySelection = () => {
     if (playerChoise === "Paper") {
-        document.querySelector("#cpu--hand").src="assets/images/paper.png"
+        document.querySelector("#cpu--hand").src = "assets/images/paper.png"
     } else if (playerChoise === "Scissors") {
-        document.querySelector("#cpu--hand").src=" assets/images/scissors.png" 
+        document.querySelector("#cpu--hand").src = " assets/images/scissors.png"
     } else if (playerChoise === "Rock") {
-        document.querySelector("#cpu--hand").src="assets/images/rock.png" 
-    }  
+        document.querySelector("#cpu--hand").src = "assets/images/rock.png"
+    }
 }
 
-
+//The default fist will change depending on what the user selects
 const displayCpuSelection = () => {
     if (computerChoise === "Paper") {
-        document.querySelector("#player--hand").src="assets/images/paper.png"
+        document.querySelector("#player--hand").src = "assets/images/paper.png"
     } else if (computerChoise === "Scissors") {
-        document.querySelector("#player--hand").src=" assets/images/scissors.png" 
+        document.querySelector("#player--hand").src = " assets/images/scissors.png"
     } else if (computerChoise === "Rock") {
-        document.querySelector("#player--hand").src="assets/images/rock.png" 
-    }  
+        document.querySelector("#player--hand").src = "assets/images/rock.png"
+    }
 }
 
+
+const getScore = () => {
+
+    if (playerChoise === "Rock" && computerChoise === "Scissors") {playerScore.innerHTML++;
+    } else if (playerChoise === "Paper" && computerChoise === "Rock") {
+        playerScore.innerHTML++;
+    } else if (computerChoise === "Rock" && playerChoise === "Scissors") {computerScore.innerHTML++; 
+    } else if (computerChoise === "Paper" && playerChoise === "Rock") {
+        computerScore.innerHTML++;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+// const audio = new Audio('assets/sounds/Platformer2.mp3');
+//   audio.play();
 

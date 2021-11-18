@@ -11,18 +11,21 @@
 //
 var playerChoise = "";
 var computerChoise = "";
+var playerScore = document.querySelector(".player-score");
+var computerScore = document.querySelector(".cpu-score");
 /** Event listeners to each user selection.  **/
 
 var selectChoice = document.querySelectorAll(".selection"); //console.log(selectChoice);
 
 selectChoice.forEach(function (choice) {
   choice.addEventListener("click", function () {
-    playerChoise = choice.innerText; //getComputerChoice()
-
+    playerChoise = choice.innerText;
+    getComputerChoice();
     displaySelection();
     displayCpuSelection(); //console.log(playerChoise)
+    //console.log(getComputerChoice())
 
-    console.log(getComputerChoice()); //alert ("You chose " + playerChoise)
+    getScore(); //alert ("You chose " + playerChoise)
   });
 }); // This function generates a random selection for the computer
 
@@ -34,7 +37,6 @@ var getComputerChoice = function getComputerChoice() {
   return computerChoise;
 }; //console.log(getComputerChoice())
 //console.log(computerChoise)
-//The default fist will change depending on what the user selects
 
 
 var displaySelection = function displaySelection() {
@@ -45,7 +47,8 @@ var displaySelection = function displaySelection() {
   } else if (playerChoise === "Rock") {
     document.querySelector("#cpu--hand").src = "assets/images/rock.png";
   }
-};
+}; //The default fist will change depending on what the user selects
+
 
 var displayCpuSelection = function displayCpuSelection() {
   if (computerChoise === "Paper") {
@@ -56,3 +59,16 @@ var displayCpuSelection = function displayCpuSelection() {
     document.querySelector("#player--hand").src = "assets/images/rock.png";
   }
 };
+
+var getScore = function getScore() {
+  if (playerChoise === "Rock" && computerChoise === "Scissors") {
+    playerScore.innerHTML++;
+  } else if (playerChoise === "Paper" && computerChoise === "Rock") {
+    playerScore.innerHTML++;
+  } else if (computerChoise === "Rock" && playerChoise === "Scissors") {
+    computerScore.innerHTML++;
+  } else if (computerChoise === "Paper" && playerChoise === "Rock") {
+    computerScore.innerHTML++;
+  }
+}; // const audio = new Audio('assets/sounds/Platformer2.mp3');
+//   audio.play();
