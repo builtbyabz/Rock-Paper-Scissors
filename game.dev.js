@@ -13,24 +13,20 @@ var playerChoise = "";
 var computerChoise = "";
 var playerScore = document.querySelector(".player-score");
 var computerScore = document.querySelector(".cpu-score");
+var body = document.querySelector("body");
+var computerWins = document.querySelector(".grid-container");
 /** Event listeners to each user selection.  **/
 
 var selectChoice = document.querySelectorAll(".selection"); //console.log(selectChoice);
 
-selectChoice.forEach(function (choice) {
-  choice.addEventListener("click", function () {
-    playerChoise = choice.innerText;
-    getComputerChoice(); //displaySelection()
-    //displayCpuSelection()
+var displayWinner = function displayWinner() {
+  if (computerScore.innerHTML === "3") {
+    //computerWins.classList.add("computerWins")
+    //computerScore.innerHTML = "0";
+    console.log("Computer Wins");
+  }
+}; // This function generates a random selection for the computer
 
-    setTimeout(displayCpuSelection, 1000);
-    setTimeout(displaySelection, 1000); //console.log(playerChoise)
-    //console.log(getComputerChoice())
-    //incrementScore()
-
-    setTimeout(incrementScore, 1000); //alert ("You chose " + playerChoise)
-  });
-}); // This function generates a random selection for the computer
 
 var getComputerChoice = function getComputerChoice() {
   var randomNumber = Math.floor(Math.random() * selectChoice.length); //console.log(randomNumber)
@@ -63,45 +59,70 @@ var displayCpuSelection = function displayCpuSelection() {
   }
 };
 
+var e = document.createElement('h3');
+var draw = document.querySelector(".draw");
+
 var incrementScore = function incrementScore() {
+  console.log(e);
+
   if (playerChoise === "Rock" && computerChoise === "Scissors") {
     playerScore.innerHTML++;
     playerScore.classList.add("green");
     computerScore.classList.remove("green");
+    draw.innerHTML = "";
   } else if (playerChoise === "Paper" && computerChoise === "Rock") {
     playerScore.innerHTML++;
     playerScore.classList.add("green");
     computerScore.classList.remove("green");
+    draw.innerHTML = "";
   } else if (playerChoise === "Scissors" && computerChoise === "Paper") {
     playerScore.innerHTML++;
     playerScore.classList.add("green");
     computerScore.classList.remove("green");
+    draw.innerHTML = "";
   } else if (computerChoise === "Rock" && playerChoise === "Scissors") {
     computerScore.innerHTML++;
     playerScore.classList.remove("green");
     computerScore.classList.add("green");
+    draw.innerHTML = "";
   } else if (computerChoise === "Paper" && playerChoise === "Rock") {
     computerScore.innerHTML++;
     playerScore.classList.remove("green");
     computerScore.classList.add("green");
+    draw.innerHTML = "";
   } else if (computerChoise === "Scissors" && playerChoise === "Paper") {
     computerScore.innerHTML++;
     playerScore.classList.remove("green");
     computerScore.classList.add("green");
+    draw.innerHTML = "";
   } else if (playerChoise === computerChoise) {
+    var _e = document.createElement('h3');
+
+    draw.innerHTML = 'DRAW'; //e.classList.add("draw")
+    //computerWins.appendChild(e);
+
     computerScore.classList.remove("green");
-    playerScore.classList.remove("green");
-    console.log("draw");
+    playerScore.classList.remove("green"); //console.log("draw") 
   }
 
   displayWinner();
 };
 
-var displayWinner = function displayWinner() {
-  if (computerScore === 3 && playerScore === !3) {
-    console.log("Computer Wins");
-  }
-}; // const incrementScore = () => {
+selectChoice.forEach(function (choice) {
+  choice.addEventListener("click", function () {
+    playerChoise = choice.innerText;
+    getComputerChoice(); //displaySelection()
+    //displayCpuSelection()
+
+    setTimeout(displayCpuSelection, 1000);
+    setTimeout(displaySelection, 1000); //console.log(playerChoise)
+    //console.log(getComputerChoice())
+    //incrementScore()
+
+    setTimeout(incrementScore, 1000);
+    displayWinner(); //alert ("You chose " + playerChoise)
+  });
+}); // const incrementScore = () => {
 //     for (computerScore = 0; computerScore < 3; computerScore++) {
 //         if (computerScore === 2) {
 //             alert("Computer You win");

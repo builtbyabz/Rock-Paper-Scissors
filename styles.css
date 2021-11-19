@@ -8,6 +8,10 @@ body {
   background-color: #1C2D5E;
 }
 
+.computerWins {
+  visibility: hidden;
+}
+
 .grid-container {
   display: grid;
   grid-gap: 15px;
@@ -28,6 +32,17 @@ body {
   height: 200px;
   width: 200px;
   object-fit: contain;
+}
+.grid-container .draw {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: 700;
+  font-family: "Play", sans-serif;
+  grid-column: 3/4;
+  grid-row: 3/4;
 }
 .grid-container .janken-title {
   grid-column: 2/5;
