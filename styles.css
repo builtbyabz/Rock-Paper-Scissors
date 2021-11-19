@@ -41,6 +41,7 @@ body {
   font-size: 1.5rem;
   color: white;
   text-transform: uppercase;
+  animation-duration: 10s;
 }
 .grid-container .cpu--hand {
   margin-bottom: 10px;
@@ -96,6 +97,11 @@ body {
   grid-row: 4/5;
   background-color: #D00000;
 }
+.grid-container .green {
+  border: 4px solid #00FF00;
+  box-shadow: 0 0 10px #fff;
+  background-color: green;
+}
 
 @media screen and (min-width: 600px) {
   .grid-container .grid-container__item img {
@@ -139,6 +145,7 @@ body {
     font-size: 6rem;
     color: white;
     text-transform: uppercase;
-    font-family: "Changa One", cursive;
+    font-family: "Play", sans-serif;
+    font-weight: bold;
   }
 }

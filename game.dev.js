@@ -20,12 +20,15 @@ var selectChoice = document.querySelectorAll(".selection"); //console.log(select
 selectChoice.forEach(function (choice) {
   choice.addEventListener("click", function () {
     playerChoise = choice.innerText;
-    getComputerChoice();
-    displaySelection();
-    displayCpuSelection(); //console.log(playerChoise)
-    //console.log(getComputerChoice())
+    getComputerChoice(); //displaySelection()
+    //displayCpuSelection()
 
-    getScore(); //alert ("You chose " + playerChoise)
+    setTimeout(displayCpuSelection, 1000);
+    setTimeout(displaySelection, 1000); //console.log(playerChoise)
+    //console.log(getComputerChoice())
+    //incrementScore()
+
+    setTimeout(incrementScore, 1000); //alert ("You chose " + playerChoise)
   });
 }); // This function generates a random selection for the computer
 
@@ -60,15 +63,50 @@ var displayCpuSelection = function displayCpuSelection() {
   }
 };
 
-var getScore = function getScore() {
+var incrementScore = function incrementScore() {
   if (playerChoise === "Rock" && computerChoise === "Scissors") {
     playerScore.innerHTML++;
+    playerScore.classList.add("green");
+    computerScore.classList.remove("green");
   } else if (playerChoise === "Paper" && computerChoise === "Rock") {
     playerScore.innerHTML++;
+    playerScore.classList.add("green");
+    computerScore.classList.remove("green");
+  } else if (playerChoise === "Scissors" && computerChoise === "Paper") {
+    playerScore.innerHTML++;
+    playerScore.classList.add("green");
+    computerScore.classList.remove("green");
   } else if (computerChoise === "Rock" && playerChoise === "Scissors") {
     computerScore.innerHTML++;
+    playerScore.classList.remove("green");
+    computerScore.classList.add("green");
   } else if (computerChoise === "Paper" && playerChoise === "Rock") {
     computerScore.innerHTML++;
+    playerScore.classList.remove("green");
+    computerScore.classList.add("green");
+  } else if (computerChoise === "Scissors" && playerChoise === "Paper") {
+    computerScore.innerHTML++;
+    playerScore.classList.remove("green");
+    computerScore.classList.add("green");
+  } else if (playerChoise === computerChoise) {
+    computerScore.classList.remove("green");
+    playerScore.classList.remove("green");
+    console.log("draw");
   }
-}; // const audio = new Audio('assets/sounds/Platformer2.mp3');
-//   audio.play();
+
+  displayWinner();
+};
+
+var displayWinner = function displayWinner() {
+  if (computerScore === 3 && playerScore === !3) {
+    console.log("Computer Wins");
+  }
+}; // const incrementScore = () => {
+//     for (computerScore = 0; computerScore < 3; computerScore++) {
+//         if (computerScore === 2) {
+//             alert("Computer You win");
+//         } else if (computerScore === 3 && playerScore !=3) {
+//             alert("Computr You win")
+//         }
+//     }
+// }

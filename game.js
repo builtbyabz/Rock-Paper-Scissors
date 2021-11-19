@@ -12,7 +12,6 @@ let playerChoise = "";
 let computerChoise = "";
 
 let playerScore = document.querySelector(".player-score");
-
 let computerScore = document.querySelector(".cpu-score");
 
 
@@ -25,12 +24,17 @@ selectChoice.forEach(choice => {
     choice.addEventListener("click", () => {
         playerChoise = choice.innerText;
         getComputerChoice()
-        displaySelection()
-        displayCpuSelection()
+        //displaySelection()
+        //displayCpuSelection()
+        setTimeout(displayCpuSelection, 1000)
+
+        setTimeout(displaySelection, 1000);
         //console.log(playerChoise)
         //console.log(getComputerChoice())
-        getScore()
+        //incrementScore()
 
+        setTimeout(incrementScore, 1000)
+       
         //alert ("You chose " + playerChoise)
     })
 
@@ -72,15 +76,43 @@ const displayCpuSelection = () => {
 }
 
 
-const getScore = () => {
+const incrementScore = () => {
 
-    if (playerChoise === "Rock" && computerChoise === "Scissors") {playerScore.innerHTML++;
-    } else if (playerChoise === "Paper" && computerChoise === "Rock") {
-        playerScore.innerHTML++;
-    } else if (computerChoise === "Rock" && playerChoise === "Scissors") {computerScore.innerHTML++; 
-    } else if (computerChoise === "Paper" && playerChoise === "Rock") {
-        computerScore.innerHTML++;
+    if (playerChoise === "Rock" && computerChoise === "Scissors") {
+        playerScore.innerHTML++; playerScore.classList.add("green");
+        computerScore.classList.remove("green");
+    } 
+    else if (playerChoise === "Paper" && computerChoise === "Rock") {
+        playerScore.innerHTML++; playerScore.classList.add("green");
+        computerScore.classList.remove("green");
+    } 
+    else if (playerChoise === "Scissors" && computerChoise === "Paper") {
+        playerScore.innerHTML++; playerScore.classList.add("green"); 
+        computerScore.classList.remove("green");
+    }
+    else if (computerChoise === "Rock" && playerChoise === "Scissors") {
+        computerScore.innerHTML++; playerScore.classList.remove("green");
+        computerScore.classList.add("green");
+    }
+    else if (computerChoise === "Paper" && playerChoise === "Rock") {
+        computerScore.innerHTML++; playerScore.classList.remove("green");
+        computerScore.classList.add("green");
 
+    } else if (computerChoise === "Scissors" && playerChoise === "Paper") {
+        computerScore.innerHTML++; playerScore.classList.remove("green");
+        computerScore.classList.add("green");
+    } else if (playerChoise === computerChoise) {
+        computerScore.classList.remove("green");
+        playerScore.classList.remove("green");
+        console.log("draw") 
+    }
+
+    displayWinner()
+}
+
+const displayWinner = () => {
+    if (computerScore === 3 && playerScore === !3) {
+        console.log("Computer Wins")
     }
 
 }
@@ -91,9 +123,26 @@ const getScore = () => {
 
 
 
+// const incrementScore = () => {
+
+   
+
+//     for (computerScore = 0; computerScore < 3; computerScore++) {
+//         if (computerScore === 2) {
+//             alert("Computer You win");
+//         } else if (computerScore === 3 && playerScore !=3) {
+//             alert("Computr You win")
+//         }
+//     }
+    
+
+// }
 
 
 
-// const audio = new Audio('assets/sounds/Platformer2.mp3');
-//   audio.play();
+
+
+
+
+
 
