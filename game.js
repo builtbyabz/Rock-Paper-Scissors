@@ -24,29 +24,28 @@ const red = document.createElement("div")
 
 
 const displayWinner = () => {
-    if (computerScore.innerHTML === "3") {
+    if (computerScore.innerHTML === "3" || computerScore === "3" && playerScore === "0") {
         computerWins.classList.add("computerWins")
-        restart()
-        
-
-        //const red = document.createElement("div")
-        red.innerHTML = "CPU WINS"
+        red.innerHTML = "COMPUTER WINS 😈"
         red.classList.add("cpuWins")
         body.appendChild(red);
         //computerScore.innerHTML = "0";
         console.log("Computer Wins")
-
-        const youLoose = new Audio('assets/sounds/mixkit-retro-arcade-lose-2027.wav');
+        let youLoose = new Audio('assets/sounds/mixkit-retro-arcade-lose-2027.wav');
         youLoose.play();
+        restart()
 
-    } else if (computerScore.innerHTML === "2" && playerScore === "0") {
-        console.log("Computer Wins")
-        computerWins.classList.add("computerWins")
+    } else if (playerScore.innerHTML === "3" || playerScore === "3"  && computerScore === "0") {
+        computerWins.classList.add("computerWins")   
+        red.innerHTML = "YOU WIN! 🥳"
+        red.classList.add("cpuWins")
+        body.appendChild(red);
+        youLoose = new Audio('assets/sounds/mixkit-video-game-win-2016.wav');
+        youLoose.play();
+        restart()
     }
     
 }
-
-
 
 const restart = () => {
     const restart = document.createElement("h2");
