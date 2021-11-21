@@ -6,10 +6,42 @@
 
 body {
   background-color: #1C2D5E;
+  padding-bottom: 20px 0;
+}
+body .cpuWins {
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  left: 50%;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: white;
+  font-family: "Play", sans-serif;
+}
+body .playAgain {
+  position: absolute;
+  top: 50%;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: white;
+  font-family: "Play", sans-serif;
+  cursor: pointer;
+  background-color: #D00000;
+  padding: 10px;
+  width: 100%;
 }
 
 .computerWins {
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-container {
@@ -37,23 +69,27 @@ body {
   display: grid;
   justify-items: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: white;
   font-weight: 700;
   font-family: "Play", sans-serif;
-  grid-column: 3/4;
-  grid-row: 3/4;
+  grid-column: 2/5;
+  white-space: nowrap;
+}
+.grid-container .versus {
+  display: none;
 }
 .grid-container .janken-title {
   grid-column: 2/5;
   font-family: "Play", sans-serif;
   color: #D10000;
   font-size: 2rem;
+  animation: pulse 3s infinite;
 }
 .grid-container .player--name {
   grid-column: 2/5;
   font-family: "Play", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
   text-transform: uppercase;
   animation-duration: 10s;
@@ -71,7 +107,7 @@ body {
 .grid-container .cpu--name {
   grid-column: 2/5;
   grid-row: 5/6;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
   text-transform: uppercase;
   font-family: "Play", sans-serif;
@@ -111,18 +147,32 @@ body {
   grid-column: 1/2;
   grid-row: 4/5;
   background-color: #D00000;
+  box-shadow: 0 0 10px red;
+  border: 4px solid red;
 }
 .grid-container .green {
   border: 4px solid #00FF00;
   box-shadow: 0 0 10px #fff;
   background-color: green;
+  animation: pulse 2s;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
   .grid-container .grid-container__item img {
     object-fit: cover;
     height: 300px;
     width: 300px;
+  }
+  .grid-container .draw {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+    font-family: "Play", sans-serif;
+    grid-column: 2/5;
+    grid-row: 3/4;
   }
   .grid-container .player--name {
     grid-column: 1/2;

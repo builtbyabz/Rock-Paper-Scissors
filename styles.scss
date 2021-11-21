@@ -6,7 +6,43 @@
 
 body {
     background-color: #1C2D5E;
+    padding-bottom: 20px 0;
+
+    .cpuWins {
+        position: absolute;
+        top: 30%;
+        right: 50%;
+        left: 50%;
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        color: white;
+        font-family: 'Play', sans-serif;
+
+    }
+
+    .playAgain {
+         position: absolute;
   
+        top: 50%;
+     
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        color: white;
+        font-family: 'Play', sans-serif;
+        cursor: pointer;
+        background-color: #D00000;
+        padding: 10px;
+        width: 100%;
+
+
+    }
+
 }
 
 
@@ -14,6 +50,9 @@ body {
 
 .computerWins {
     visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid-container {
@@ -34,7 +73,7 @@ body {
         align-items: center;
 
         img {
-            height: 200px;
+            height:200px;
             width: 200px;
             object-fit: contain;
         }
@@ -44,15 +83,18 @@ body {
         display: grid;
         justify-items: center;
         align-items: center;
-        font-size: 3rem;
+        font-size: 1.5rem;
         color: white;
         font-weight: 700;
         font-family: 'Play', sans-serif;
-        grid-column: 3 / 4;
-        grid-row: 3 / 4;
+        grid-column: 2 / 5;
+        white-space: nowrap;
+    
     }
-  
 
+    .versus {
+        display: none;
+    }
 
 
     .janken-title {
@@ -60,15 +102,19 @@ body {
         font-family: 'Play', sans-serif;
         color: #D10000;
         font-size: 2rem;
+        animation: pulse 3s infinite;
+       
+
+
     }
 
     .player--name {
         grid-column: 2 / 5;
         font-family: 'Play', sans-serif;
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: white;
         text-transform: uppercase;
-        animation-duration: 10s; 
+        animation-duration: 10s;
     }
 
     .cpu--hand {
@@ -81,14 +127,14 @@ body {
     .player--hand {
         margin-top: 10px;
         grid-column: 2 / 5;
-     
-      
+
+
     }
 
     .cpu--name {
         grid-column: 2 / 5;
         grid-row: 5 / 6;
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: white;
         text-transform: uppercase;
         font-family: 'Play', sans-serif;
@@ -127,7 +173,7 @@ body {
         background-color: #D00000;
         grid-column: 1 / 2;
         grid-row: 3 / 4;
-      
+
     }
 
     .player-score {
@@ -138,17 +184,23 @@ body {
         grid-column: 1 / 2;
         grid-row: 4 / 5;
         background-color: #D00000;
+        box-shadow: 0 0 10px red;
+        border: 4px solid red;
+       
+
+
     }
 
     .green {
         border: 4px solid #00FF00;
         box-shadow: 0 0 10px #fff;
         background-color: green;
+        animation: pulse 2s;
     }
 
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
 
     .grid-container {
 
@@ -159,6 +211,18 @@ body {
                 height: 300px;
                 width: 300px;
             }
+        }
+
+        .draw {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: 700;
+            font-family: 'Play', sans-serif;
+            grid-column: 2 / 5;
+            grid-row: 3 / 4;
         }
 
         .player--name {
@@ -178,10 +242,10 @@ body {
         .cpu-score {
             grid-column: 5 / 6;
             grid-row: 2 / 3;
-           
+
         }
 
-       
+
 
         .select {
             grid-row: 6 / 7;
@@ -190,7 +254,7 @@ body {
         .player--hand {
             grid-row: 4;
             transform: rotate(270deg);
-            
+
             grid-column: 4 / 5;
             margin: 0;
         }
@@ -198,7 +262,8 @@ body {
         .cpu--hand {
             grid-row: 4;
             grid-column: 2 / 3;
-            transform: rotate(90deg) scaleX(-1);;
+            transform: rotate(90deg) scaleX(-1);
+            ;
             margin: 0;
         }
 
