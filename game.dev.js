@@ -18,7 +18,8 @@ var computerWins = document.querySelector(".grid-container"); //const e = docume
 
 var draw = document.querySelector(".draw");
 var selectChoice = document.querySelectorAll(".selection");
-var red = document.createElement("div");
+var red = document.createElement("div"); //var janken = new Audio('assets/sounds/Platformer2.mp3');
+//janken.play();
 
 var displayWinner = function displayWinner() {
   if (computerScore.innerHTML === "3" || computerScore === "3" && playerScore === "0") {
@@ -131,7 +132,7 @@ var incrementScore = function incrementScore() {
     draw.innerHTML = "Scissors beats Paper. You loose 😞";
   } else if (playerChoise === computerChoise) {
     //const e = document.createElement('h3');
-    draw.innerHTML = 'DRAW'; //e.classList.add("draw")
+    draw.innerHTML = "You both chose ".concat(computerChoise, "!"); //e.classList.add("draw")
     //computerWins.appendChild(e);
 
     computerScore.classList.remove("green");
@@ -157,6 +158,6 @@ selectChoice.forEach(function (choice) {
     //incrementScore()
 
     setTimeout(incrementScore, 1500);
-    displayWinner(); //alert ("You chose " + playerChoise)
+    displayWinner();
   });
 });

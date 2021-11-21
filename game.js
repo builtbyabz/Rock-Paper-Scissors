@@ -23,6 +23,10 @@ const red = document.createElement("div")
 
 
 
+//var janken = new Audio('assets/sounds/Platformer2.mp3');
+//janken.play();
+
+
 const displayWinner = () => {
     if (computerScore.innerHTML === "3" || computerScore === "3" && playerScore === "0") {
         computerWins.classList.add("computerWins")
@@ -144,7 +148,7 @@ const incrementScore = () => {
     } else if (playerChoise === computerChoise) {
         //const e = document.createElement('h3');
 
-        draw.innerHTML = 'DRAW';
+        draw.innerHTML = `You both chose ${computerChoise}!`;
         //e.classList.add("draw")
         //computerWins.appendChild(e);
 
@@ -177,7 +181,7 @@ selectChoice.forEach(choice => {
         setTimeout(incrementScore, 1500)
         displayWinner()
 
-        //alert ("You chose " + playerChoise)
+       
     })
 
 });

@@ -205,12 +205,13 @@ body .playAgain {
     margin: 0;
   }
   .grid-container .versus {
+    display: grid;
     grid-column: 3/4;
     grid-row: 4;
-    font-size: 6rem;
-    color: white;
+    font-size: 4rem;
+    color: whitesmoke;
     text-transform: uppercase;
     font-family: "Play", sans-serif;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
