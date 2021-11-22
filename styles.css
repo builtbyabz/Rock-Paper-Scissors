@@ -7,6 +7,9 @@
 body {
   background-color: #1C2D5E;
   padding-bottom: 20px 0;
+  width: 100%;
+  height: 100vh;
+  zoom: 85%;
 }
 body .cpuWins {
   position: absolute;
@@ -50,7 +53,7 @@ body .playAgain {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(7, 1fr);
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 .grid-container .grid-container__item {
   display: grid;
@@ -130,7 +133,7 @@ body .playAgain {
   color: white;
   letter-spacing: 1px;
 }
-.grid-container .cpu-score {
+.grid-container .player-score {
   font-family: "Play", sans-serif;
   font-size: 3rem;
   font-weight: 700;
@@ -139,7 +142,7 @@ body .playAgain {
   grid-column: 1/2;
   grid-row: 3/4;
 }
-.grid-container .player-score {
+.grid-container .cpu-score {
   font-family: "Play", sans-serif;
   font-size: 3rem;
   font-weight: 700;
@@ -147,8 +150,6 @@ body .playAgain {
   grid-column: 1/2;
   grid-row: 4/5;
   background-color: #D00000;
-  box-shadow: 0 0 10px red;
-  border: 4px solid red;
 }
 .grid-container .green {
   border: 4px solid #00FF00;
@@ -158,6 +159,10 @@ body .playAgain {
 }
 
 @media screen and (min-width: 900px) {
+  body {
+    zoom: 90%;
+  }
+
   .grid-container .grid-container__item img {
     object-fit: cover;
     height: 300px;
