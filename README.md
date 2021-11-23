@@ -5,7 +5,7 @@
 This game was made during the 4th week of my _nology course. 
 I used HTML CSS3 and vanilla Javascript. 
 
-[Check the Live Demo!](https://ab-96.github.io/Rock-Paper-Scissors/)
+[Check out the Live Demo!](https://ab-96.github.io/Rock-Paper-Scissors/)
 ![Janken Game](assets/images/janken-mobile.png)
 
 
@@ -19,7 +19,8 @@ The user has three options: rock, paper and scissors. The person that plays the 
 I started by creating global variables to store information about the player and computer scores and choices.
 
 ```javascript 
-let playerChoise  = ""; let computerChoise = "";
+let playerChoise  = ""; 
+let computerChoise = "";
 let playerScore = document.querySelector(".player-score");
 let computerScore = document.querySelector(".cpu-score");
 ```
